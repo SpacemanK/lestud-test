@@ -1,0 +1,38 @@
+@use "./variables" as *;
+.slider-selector{
+    display:flex;
+    flex-direction: column;
+    height:calc(0.5 * $navbar-size);
+    font-size: 0.8em;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    color:$background-color;
+    margin-top: calc($navbar-size / 8);
+  }
+  .slider {
+    -webkit-appearance: none;  
+    appearance: none;
+    
+    height: 10px; 
+    background: $secondary-color; 
+    outline: none; 
+    border-radius: 10px;
+  
+  }
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+    height: 14px;
+    width:14px;
+    border-radius: 14px;
+    background: $primary-color-light; 
+    cursor: pointer; 
+    transition: 0.2s ease;
+  }
+  .slider::-webkit-slider-thumb:hover {
+   transition: 0.2s ease;
+    background: $primary-color; 
+    cursor: pointer; 
+  }
+  
+  

@@ -1,0 +1,133 @@
+@use "./variables" as *;
+.select{
+    background-color: $foreground-color;
+    cursor: pointer;
+    height:calc(0.5 * #{$navbar-size});
+    transition: 0.3s ease;
+    border-radius: calc(0.1 * #{$navbar-size});
+    display:flex;
+    color:$black-shade;
+    flex-wrap:wrap;
+    border:1px solid rgba(0,0,0,.2);
+  }
+  .select[data-extended=false]:hover{
+    background-color: $foreground-color-dark;
+  }
+  .select[data-extended=true].large{
+    height:calc(2.5 * #{$navbar-size});
+  }
+  .select[data-extended=true]{
+    height:calc(1.5 * #{$navbar-size});
+    transition: 0.3s ease;
+    background-color: $secondary-color;
+    color:$primary-color;
+    box-shadow: 0 0 2px  $primary-color;
+    
+  }
+  .select-icon{
+    height: calc(0.5 * #{$navbar-size});
+    width: calc(0.5 * #{$navbar-size});
+    border-radius: calc(0.1 * #{$navbar-size});
+    background-color: $black-shade;
+    flex-grow: 0;
+    transition:0.5s ease;
+    
+  }
+  .select-icon[data-id=image_type]{
+    -webkit-mask: url("../icons/image-icon.png") no-repeat center;
+    mask: url("../icons/image-icon.png") no-repeat center;
+    mask-size: 80%;
+  }
+  .select-icon[data-id=orientation]{
+    -webkit-mask: url("../icons/orientation-icon.png") no-repeat center;
+    mask: url("../icons/orientation-icon.png") no-repeat center;
+    mask-size: 80%;
+  }
+  .select-icon[data-id=order]{
+    -webkit-mask: url("../icons/popularity-icon.png") no-repeat center;
+    mask: url("../icons/popularity-icon.png") no-repeat center;
+    mask-size: 80%;
+  }
+  .select-icon[data-id=category]{
+    -webkit-mask: url("../icons/category-icon.png") no-repeat center;
+    mask: url("../icons/category-icon.png") no-repeat center;
+    mask-size: 80%;
+  }
+  .select-icon[data-id=colors]{
+    -webkit-mask: url("../icons/colors-icon.png") no-repeat center;
+    mask: url("../icons/colors-icon.png") no-repeat center;
+    mask-size: 80%;
+  }
+  .select-title{
+    display: flex;
+   
+  }
+  .select[data-extended=true] .select-icon{
+    transition: 0.5s ease;
+    background-color: $primary-color;
+  }
+  .select-title{
+    font-size: 1.1em;
+    width:calc(100% - 0.5 * #{$navbar-size});
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight:400;
+    height: calc(0.5 * #{$navbar-size});
+  }
+  .select-title span{
+    text-align:center;
+    line-height: calc(0.5 * #{$navbar-size});
+    
+    padding-left: 5px;
+  }
+  .options{
+    width:100%;
+    height:calc(1 * #{$navbar-size});
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s ease;
+    border-radius:0 0 calc(0.1 * #{$navbar-size}) calc(0.1 * #{$navbar-size});
+    overflow:scroll;
+    display:flex;
+    flex-direction: column;
+  }
+  .select.large .options{
+    height:calc(2 * #{$navbar-size});
+  }
+  .options::-webkit-scrollbar {
+    display:none;
+  }
+  .option{
+    height:calc(0.4 * #{$navbar-size});
+    margin:calc(0.05 * #{$navbar-size});
+    border-radius: calc(0.1 * #{$navbar-size});
+    background-color: $foreground-color;
+    flex-shrink: 0;
+    
+    color:$black-shade;
+    box-sizing: border-box;
+    position: relative;
+  }
+  .option.active{
+    background-color: $foreground-color-dark-lighter;
+  }
+  .option:hover{
+    transition:0.3s ease;
+    background-color: $foreground-color-dark-lighter;
+  }
+  .select[data-extended=true] .options{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s ease;
+    background-color: $foreground-color;
+  }
+  .option span{
+    color:$background-color;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    position:absolute;
+    height:100%;
+    left:0;
+    padding-left: calc($navbar-size / 4);
+    line-height: calc(0.4 * #{$navbar-size});
+  }
+  

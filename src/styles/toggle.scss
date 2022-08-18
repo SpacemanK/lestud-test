@@ -1,0 +1,50 @@
+@use "./variables" as *;
+.toggles{
+    display:flex;
+    height:calc(0.5*$navbar-size);
+    
+    border-radius: calc(0.1 * #{$navbar-size});
+    width: 100%;
+    align-items: center;
+    gap:calc(0.1 * $navbar-size);
+  }
+  .toggles span{
+      text-align:center;
+      line-height: calc(0.5 * #{$navbar-size});
+      overflow: hidden;
+  
+  }
+  .toggle{
+    cursor: pointer;
+    height:calc(0.3 * #{$navbar-size});
+    width:calc(0.6 * #{$navbar-size});
+    background-color: $foreground-color;
+    border-radius: calc(0.4 * #{$navbar-size});
+    border:1px solid rgba(0,0,0,.2);
+    position:relative;
+    transition: 0.15s ease;
+  }
+  .toggle:hover{
+    box-shadow: 0 0 2px  $primary-color;
+  }
+  .toggle-indicator{
+    position: absolute;
+    left:0;
+    top:0;
+    margin: calc(0.025 * #{$navbar-size});
+    height: calc(0.25 * #{$navbar-size}) ;
+    width:calc(0.25 * #{$navbar-size});
+    background-color: $primary-color-light;
+    box-sizing: border-box;
+    border:1px solid rgba(255,255,255,0.4);
+    border-radius:calc(0.3 * #{$navbar-size});
+    transition: 0.15s ease;
+  }
+  .toggle[data-active=true] .toggle-indicator{
+    transform: translateX(calc(0.3 * $navbar-size));
+    transition: 0.15s ease;
+  }
+  .toggle[data-active=true]{
+    background-color: $secondary-color;
+    transition: 0.15s ease;
+  }

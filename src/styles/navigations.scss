@@ -1,0 +1,82 @@
+@use "./variables" as *;
+.navigation{
+    width:100%;
+    height:calc(0.5 * #{$navbar-size});
+    font-size: 0.8em;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    color:$background-color;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .previous-page {
+    height:calc(0.4 * #{$navbar-size});
+    width: calc(0.4 * #{$navbar-size});
+    border-radius: calc(0.4 * #{$navbar-size});
+    background-color: $secondary-color;
+    cursor: pointer;
+    transition: 0.15s ease;
+  }
+  .previous-page:hover{
+    transition: 0.15s ease;
+    box-shadow: 0 0 2px  $primary-color;
+  }
+  .next-page:hover{
+    transition: 0.15s ease;
+    box-shadow: 0 0 2px  $primary-color;
+  }
+  .previous-icon{
+    height:100%;
+    width:100%;
+    -webkit-mask: url("../icons/arrow-left-icon.png") no-repeat center;
+    mask: url("../icons/arrow-left-icon.png") no-repeat center;
+    mask-size: 80%;
+    background-color: $primary-color;
+    transition: 0.15s ease;
+  }
+  .next-page[data-disabled=true]{
+    background-color: $foreground-color-dark-lighter;
+    transition: 0.15s ease;
+    cursor:default;
+  }
+  .next-page[data-disabled=true]:hover{
+    box-shadow: none;
+  }
+  .previous-page[data-disabled=true]:hover{
+    box-shadow: none;
+  }
+  .next-page[data-disabled=true] .next-icon{
+    background-color: $foreground-color;
+    transition: 0.15s ease;
+  }
+  .previous-page[data-disabled=true] .previous-icon{
+    background-color: $foreground-color;
+    transition:0.15s ease;
+  }
+  .previous-page[data-disabled=true]{
+    background-color: $foreground-color-dark-lighter;
+    transition: 0.15s ease;
+    cursor:default;
+  }
+  .next-page {
+    height:calc(0.4 * #{$navbar-size});
+    width: calc(0.4 * #{$navbar-size});
+    border-radius: calc(0.4 * #{$navbar-size});
+    background-color: $secondary-color;
+    cursor: pointer;
+    
+  
+  }
+  .next-icon{
+    height: 100%;
+    width: 100%;
+    -webkit-mask: url("../icons/arrow-right-icon.png") no-repeat center;
+    mask: url("../icons/arrow-right-icon.png") no-repeat center;
+    mask-size: 80%;
+    background-color: $primary-color;
+  }
+  
+  .navigation span{
+    line-height: calc(0.5 * #{$navbar-size});
+  }
